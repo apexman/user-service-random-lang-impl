@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: MOCK
+    username: MOCK
+    password: MOCK
+  jpa:
+    show-sql: true
+
+logging:
+  level:
+    ru.apexman: DEBUG

@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/testing_user_service"
+    username: "postgres"
+    password: "postgres"
+
+logging:
+  level:
+    ru.apexman: DEBUG
