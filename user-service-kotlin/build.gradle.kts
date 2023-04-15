@@ -67,7 +67,7 @@ tasks.named<Jar>("jar") {
 
 tasks.jar {
     manifest {
-        attributes("Main-Class" to "ru.sourcemap.connect.ConnectBalancesApplicationKt")
+        attributes("Main-Class" to "ru.apexman.userservicekotlin.MainApplication")
     }
     from(sourceSets.main.get().output)
     dependsOn(configurations.runtimeClasspath)
@@ -87,21 +87,9 @@ tasks.jacocoTestReport {
         files(classDirectories.files.map {
             fileTree(it) {
                 exclude(
-                    "ru/sourcemap/connect/balances/repository/**"
+                    "ru/apexman/userservicekotlin/repository/**"
                 )
             }
         })
     )
-}
-
-fun fillProperties(file: String = "github.properties"): Properties? {
-    val properties = Properties()
-    val localProperties = File(file)
-    if (localProperties.isFile) {
-        InputStreamReader(FileInputStream(localProperties), Charsets.UTF_8).use { reader ->
-            properties.load(reader)
-        }
-    } else return null
-
-    return properties
 }

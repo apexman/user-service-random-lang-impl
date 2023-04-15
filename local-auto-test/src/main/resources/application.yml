@@ -1,0 +1,24 @@
+server:
+  port: ${PORT:8081}
+
+
+spring:
+  http:
+    log-request-details: true
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: false
+  profiles:
+    active: testing
+  data:
+    web:
+      pageable:
+        size-parameter: limit
+        one-indexed-parameters: true
+
+logging:
+  level:
+    ru.apexman: DEBUG
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+    reactor.netty.http.client.HttpClient: DEBUG

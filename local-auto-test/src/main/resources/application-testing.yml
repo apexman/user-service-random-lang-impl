@@ -1,0 +1,7 @@
+testing-apps:
+  user-service-uri: /api/users
+  kotlin-app-url: http://localhost:8080
+
+logging:
+  level:
+    ru.apexman: DEBUG
